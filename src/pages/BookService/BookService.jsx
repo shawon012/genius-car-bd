@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const BookService = () => {
     const service = useLoaderData();
+    console.log(service)
     const { title, _id, price, img } = service;
     const {user} = useContext(AuthContext);
 
@@ -26,7 +27,7 @@ const BookService = () => {
 
         console.log(booking);
 
-        fetch('https://genius-server-shawon012.vercel.app/bookings', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'
